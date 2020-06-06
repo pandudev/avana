@@ -1,11 +1,16 @@
 .btn {
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 500;
   color: $white;
   background-color: $orange;
   padding: 16px 36px;
   border-radius: 30px;
   display: inline-block;
   text-align: center;
+
+  @include breakpoint(large) {
+    font-size: 24px;
+  }
 
   &--green {
     background-color: #2dcc7f;

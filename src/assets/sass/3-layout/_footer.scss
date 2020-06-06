@@ -1,47 +1,80 @@
 .footer {
-  background-color: $light-grey;
-  background-image: url("./../img/footer_bg.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 400px;
-  padding-top: 3rem;
+  padding: 2rem 0;
   color: $white;
   display: flex;
   align-items: center;
+  background-color: $blue;
+
+  @include breakpoint(large) {
+    padding-top: 3rem;
+    height: 400px;
+    background-color: $light-grey;
+    background-image: url("./../img/footer_bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    @include breakpoint(large) {
+      align-items: flex-start;
+    }
   }
 
   &__logo {
     img {
-      height: 40px;
+      height: 30px;
       margin-bottom: 2rem;
+
+      @include breakpoint(large) {
+        height: 40px;
+      }
     }
   }
 
   &__content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include breakpoint(large) {
+      flex-wrap: nowrap;
+    }
   }
 
   &__about {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    @include breakpoint(large) {
+      margin-bottom: 0;
+      flex-basis: 50%;
+      text-align: left;
+    }
+  }
+
+  &__link {
+    flex-basis: 50%;
+    @include breakpoint(large) {
+      flex-basis: 20%;
+    }
+  }
+
+  &__social {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
 
-  &__link {
-    flex-basis: 20%;
-  }
-
-  &__social {
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include breakpoint(large) {
+      flex-basis: 20%;
+    }
 
     &__list {
       display: flex;

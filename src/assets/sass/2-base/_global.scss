@@ -9,8 +9,12 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
+
+  @include breakpoint(large) {
+    width: 80%;
+  }
 }
 
 .section {
@@ -20,15 +24,25 @@ body {
   align-items: center;
 
   &__header {
-    width: 60%;
+    width: 85%;
     text-align: center;
     margin-bottom: 0.5rem;
+
+    @include breakpoint(large) {
+      width: 60%;
+    }
   }
 
   &__intro {
-    width: 80%;
+    width: 100%;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 2rem;
+    text-align: justify;
+
+    @include breakpoint(large) {
+      text-align: center;
+      width: 80%;
+    }
   }
 }

@@ -1,9 +1,13 @@
 .header {
-  // width: 100vh;
-  min-height: 100vh;
-  background-image: url("./../img/header_bg.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
+  height: 100vh;
+  background-color: $blue;
+
+  @include breakpoint(large) {
+    min-height: 100vh;
+    background-image: url("./../img/header_bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
 }
 
 .navbar {
@@ -13,8 +17,12 @@
 
   &__wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 30px;
+
+    @include breakpoint(large) {
+      justify-content: space-between;
+    }
   }
 
   &__brand {
@@ -25,25 +33,71 @@
       height: 30px;
     }
   }
+
+  &__nav {
+    display: none !important;
+
+    @include breakpoint(large) {
+      display: flex !important;
+    }
+  }
 }
 
 .hero {
+  height: calc(100vh - 90px);
+
+  @include breakpoint(large) {
+    height: initial;
+  }
+
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+
+  @include breakpoint(large) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
 
   &__intro {
-    flex-basis: 50%;
+    order: 2;
     color: $white;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(large) {
+      align-items: flex-start;
+      flex-basis: 100%;
+      flex-basis: 50%;
+      order: 1;
+    }
 
     h1 {
       margin-bottom: 2rem;
+      text-align: center;
+
+      @include breakpoint(large) {
+        text-align: left;
+      }
     }
   }
 
   &__image {
+    order: 1;
+    margin-bottom: 2rem;
+
+    @include breakpoint(large) {
+      margin-bottom: 0;
+      order: 2;
+    }
+
     img {
-      width: 550px;
+      width: 360px;
+
+      @include breakpoint(large) {
+        width: 550px;
+      }
     }
   }
 }
