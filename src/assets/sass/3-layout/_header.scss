@@ -84,14 +84,6 @@
       height: 30px;
     }
   }
-
-  &__nav {
-    display: none !important;
-
-    @include breakpoint(large) {
-      display: flex !important;
-    }
-  }
 }
 
 .hero {
