@@ -1,0 +1,34 @@
+html,
+body {
+  font-family: $montserrat;
+  color: $black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    width: 60%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  &__intro {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}

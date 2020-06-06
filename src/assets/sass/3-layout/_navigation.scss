@@ -1,0 +1,44 @@
+.nav {
+  flex-basis: 60%;
+  display: flex;
+  align-items: center;
+
+  &__list {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > li > a {
+      font-size: 24px;
+      color: $white;
+
+      &.active {
+        color: $orange;
+      }
+
+      &:hover {
+        color: $green;
+      }
+    }
+
+    &--footer {
+      flex-direction: column !important;
+      align-items: flex-start;
+
+      & > li {
+        margin-bottom: 10px;
+
+        a {
+          font-size: 16px;
+          color: $white;
+
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+}

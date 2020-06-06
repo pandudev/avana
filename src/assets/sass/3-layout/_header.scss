@@ -1,0 +1,49 @@
+.header {
+  // width: 100vh;
+  min-height: 100vh;
+  background-image: url("./../img/header_bg.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  height: 90px;
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 30px;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__intro {
+    flex-basis: 50%;
+    color: $white;
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__image {
+    img {
+      width: 550px;
+    }
+  }
+}
