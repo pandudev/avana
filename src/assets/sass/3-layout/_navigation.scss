@@ -42,3 +42,17 @@
     }
   }
 }
+
+.mobile-menu {
+  background-color: $orange;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100vw;
+  height: 100vh;
+  transition: left 0.2s ease-in-out;
+
+  &.show {
+    left: 0;
+  }
+}

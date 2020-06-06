@@ -14,4 +14,10 @@ $(document).ready(function () {
       .not($(this).children(".faq__item__toggle"))
       .removeClass("active");
   });
+
+  $(".navbar__hamburger").click(function () {
+    $(".mobile-menu").toggleClass("show");
+    $(".navbar__hamburger").toggleClass("active");
+    $("body").toggleClass("fixed");
+  });
 });

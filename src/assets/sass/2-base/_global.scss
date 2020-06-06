@@ -2,6 +2,11 @@ html,
 body {
   font-family: $montserrat;
   color: $black;
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
 }
 
 * {
