@@ -288,7 +288,11 @@ a {
 html,
 body {
   font-family: "Montserrat", sans-serif;
-  color: #3b3b3b; }
+  color: #3b3b3b;
+  position: relative; }
+
+.fixed {
+  position: fixed; }
 
 * {
   box-sizing: border-box; }
@@ -373,12 +377,16 @@ h4 {
 .header {
   height: 100vh;
   background-color: #1372e8; }
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     .header {
+      background-color: unset;
       min-height: 100vh;
       background-image: url("./../img/header_bg.png");
-      background-size: 100%;
+      background-size: cover;
       background-repeat: no-repeat; } }
+  @media (min-width: 768px) and (min-width: 1200px) {
+    .header {
+      background-size: 100%; } }
 
 .navbar {
   height: 90px;
@@ -386,11 +394,40 @@ h4 {
   align-items: center; }
   .navbar__wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     height: 30px; }
-    @media (min-width: 1200px) {
-      .navbar__wrapper {
-        justify-content: space-between; } }
+  .navbar__hamburger {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center; }
+    .navbar__hamburger div {
+      width: 40px;
+      height: 6px;
+      background-color: #fdb816;
+      transition: all 0.2s ease-out; }
+      .navbar__hamburger div::before, .navbar__hamburger div::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        height: 6px;
+        background-color: #fdb816;
+        transition: all 0.2s ease-in-out; }
+      .navbar__hamburger div::before {
+        top: 0; }
+      .navbar__hamburger div::after {
+        bottom: 0; }
+    .navbar__hamburger.active div {
+      background-color: transparent; }
+      .navbar__hamburger.active div::before {
+        background-color: #ffffff;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg); }
+      .navbar__hamburger.active div::after {
+        background-color: #ffffff;
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg); }
   .navbar__brand {
     display: flex;
     align-items: center; }
@@ -472,6 +509,17 @@ h4 {
           color: #ffffff; }
           .nav__list--footer > li a:hover {
             color: #1bbc9d; }
+
+.mobile-menu {
+  background-color: #fdb816;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100vw;
+  height: 100vh;
+  transition: left 0.2s ease-in-out; }
+  .mobile-menu.show {
+    left: 0; }
 
 .footer {
   padding: 2rem 0;
