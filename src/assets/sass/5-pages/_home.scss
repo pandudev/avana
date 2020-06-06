@@ -90,8 +90,10 @@
 
         img {
           width: 140px;
+          height: auto;
 
           @include breakpoint(large) {
+            width: auto;
             height: 180px;
           }
         }

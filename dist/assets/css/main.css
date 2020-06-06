@@ -697,9 +697,11 @@ textarea {
           .avana__list__item figure {
             margin-bottom: 2rem; } }
         .avana__list__item figure img {
-          width: 140px; }
+          width: 140px;
+          height: auto; }
           @media (min-width: 1200px) {
             .avana__list__item figure img {
+              width: auto;
               height: 180px; } }
 
 .payment {
