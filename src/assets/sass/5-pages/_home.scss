@@ -42,10 +42,16 @@
         background-size: cover;
         top: 50%;
         transform: translateY(-50%);
-        left: -80px;
-        width: 60px;
-        height: 60px;
+        left: -60px;
+        width: 48px;
+        height: 48px;
         content: "";
+
+        // @include breakpoint(small) {
+        //   left: -80px;
+        //   width: 60px;
+        //   height: 60px;
+        // }
       }
     }
   }
@@ -61,13 +67,13 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @include breakpoint(large) {
+    @include breakpoint(small) {
       flex-direction: row;
     }
 
     &__item {
       margin-bottom: 2rem;
-      @include breakpoint(large) {
+      @include breakpoint(small) {
         flex-basis: 30%;
         margin-bottom: 0;
       }
@@ -76,7 +82,7 @@
         width: 80%;
         margin: 0 auto;
 
-        @include breakpoint(large) {
+        @include breakpoint(small) {
           width: 100%;
         }
       }
@@ -84,7 +90,7 @@
       figure {
         margin-bottom: 1rem;
 
-        @include breakpoint(large) {
+        @include breakpoint(small) {
           margin-bottom: 2rem;
         }
 
@@ -144,7 +150,7 @@
       justify-content: center;
       align-items: center;
 
-      @include breakpoint(large) {
+      @include breakpoint(small) {
         flex-basis: 30%;
         &:nth-child(-n + 3) {
           margin-bottom: 2rem;
@@ -171,7 +177,11 @@
     justify-content: space-between;
     margin-bottom: 2rem;
 
-    @include breakpoint(large) {
+    @include breakpoint(small) {
+      margin-bottom: 1rem;
+    }
+
+    @include breakpoint(medium) {
       flex-wrap: wrap;
       flex-direction: row;
     }
@@ -184,15 +194,31 @@
       align-items: center;
       position: relative;
 
+      @include breakpoint(small) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      @include breakpoint(medium) {
+        flex-basis: 45%;
+        flex-direction: column;
+      }
+
       figure {
-        width: 100%;
+        width: 300px;
         order: 1;
         margin-bottom: 1rem;
 
-        @include breakpoint(large) {
-          order: initial;
-          width: 400px;
+        @include breakpoint(small) {
+          flex-basis: 40%;
+          flex-shrink: 0;
         }
+
+        @include breakpoint(medium) {
+          width: 100%;
+          order: initial;
+        }
+
         img {
           width: 100%;
         }
@@ -204,7 +230,12 @@
         flex-direction: column;
         align-items: center;
 
-        @include breakpoint(large) {
+        @include breakpoint(small) {
+          flex-basis: 55%;
+          flex-shrink: 0;
+        }
+
+        @include breakpoint(medium) {
           order: initial;
         }
 
@@ -212,13 +243,13 @@
           text-align: center;
           margin-bottom: 1rem;
 
-          @include breakpoint(large) {
+          @include breakpoint(medium) {
             width: 60%;
           }
         }
 
         p {
-          @include breakpoint(large) {
+          @include breakpoint(medium) {
             width: 80%;
           }
         }
@@ -231,7 +262,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       flex-direction: row;
     }
 
@@ -242,8 +273,9 @@
       align-items: center;
       margin-bottom: 2rem;
 
-      @include breakpoint(large) {
+      @include breakpoint(medium) {
         margin-bottom: 0;
+        flex-basis: 45%;
       }
 
       figure {
@@ -251,10 +283,15 @@
         height: 200px;
         margin-bottom: 1rem;
 
-        @include breakpoint(large) {
+        @include breakpoint(small) {
+          width: 100%;
+          height: 250px;
+        }
+
+        @include breakpoint(medium) {
           margin-bottom: 2rem;
           height: 300px;
-          width: 400px;
+          width: 100%;
         }
 
         iframe {
@@ -268,6 +305,11 @@
         text-align: center;
         margin-bottom: 1rem;
 
+        @include breakpoint(medium) {
+          width: 80%;
+          text-align: center;
+        }
+
         @include breakpoint(large) {
           width: 100%;
           text-align: left;
@@ -275,7 +317,7 @@
       }
 
       p {
-        @include breakpoint(large) {
+        @include breakpoint(medium) {
           width: 80%;
         }
       }
@@ -291,7 +333,7 @@
     display: flex;
     flex-direction: column;
 
-    @include breakpoint(large) {
+    @include breakpoint(small) {
       align-items: center;
     }
   }
@@ -314,9 +356,9 @@
         background-size: cover;
         top: 50%;
         transform: translateY(-50%);
-        left: -80px;
-        width: 60px;
-        height: 60px;
+        left: -60px;
+        width: 48px;
+        height: 48px;
         content: "";
       }
 
@@ -331,9 +373,9 @@
         align-items: center;
         top: 50%;
         transform: translateY(-50%);
-        left: -80px;
-        width: 60px;
-        height: 60px;
+        left: -60px;
+        width: 48px;
+        height: 48px;
       }
     }
   }
@@ -372,23 +414,27 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @include breakpoint(large) {
+    @include breakpoint(small) {
       flex-wrap: wrap;
       flex-direction: row;
     }
 
     &__item {
       flex-basis: 45%;
-      justify-content: space-between;
+      // justify-content: space-between;
       display: flex;
       align-items: center;
       margin-bottom: 2rem;
+
+      // @include breakpoint(small) {
+      //   flex-direction: column;
+      // }
 
       figure {
         img {
           width: 80px;
 
-          @include breakpoint(large) {
+          @include breakpoint(small) {
             width: 100px;
           }
         }
@@ -409,20 +455,21 @@
 .testimonial {
   &__list {
     margin-bottom: 4rem;
+
     &__item {
       display: flex;
       flex-direction: column;
       margin-bottom: 2rem;
       align-items: center;
 
-      @include breakpoint(large) {
+      @include breakpoint(small) {
         flex-direction: row;
       }
 
       figure {
         order: 1;
 
-        @include breakpoint(large) {
+        @include breakpoint(small) {
           flex: 1;
           order: initial;
         }
@@ -431,9 +478,13 @@
           height: 200px;
           margin-bottom: 1rem;
 
-          @include breakpoint(large) {
+          @include breakpoint(small) {
             height: 300px;
             width: 90%;
+          }
+
+          @include breakpoint(medium) {
+            width: 100%;
           }
         }
       }
@@ -441,6 +492,11 @@
       &__content {
         order: 2;
         flex-basis: 50%;
+
+        @include breakpoint(small) {
+          text-align: justify;
+          margin: 0 2rem;
+        }
 
         @include breakpoint(large) {
           order: initial;
@@ -476,6 +532,11 @@
 
   display: flex;
   flex-direction: column;
+
+  @include breakpoint(small) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 
   @include breakpoint(large) {
     display: block;
@@ -520,6 +581,12 @@
     background-color: $blue;
     border-radius: 10px;
     order: 1;
+    width: 90%;
+
+    @include breakpoint(small) {
+      order: initial;
+      margin: 0 20px;
+    }
 
     @include breakpoint(large) {
       border-radius: 30px;
@@ -528,7 +595,7 @@
       top: 50%;
       transform: translateY(-50%);
 
-      width: 500px;
+      width: 400px;
     }
   }
 
@@ -537,6 +604,10 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 2rem;
+
+    @include breakpoint(small) {
+      margin: 0 20px;
+    }
 
     @include breakpoint(large) {
       padding-left: 600px;

@@ -4,14 +4,21 @@
 
   @include breakpoint(small) {
     background-color: unset;
-    min-height: 100vh;
+    height: 500px;
     background-image: url("./../img/header_bg.png");
     background-size: cover;
     background-repeat: no-repeat;
+  }
 
-    @include breakpoint(large) {
-      background-size: 100%;
-    }
+  @include breakpoint(medium) {
+    height: 600px;
+    background-size: fill;
+  }
+
+  @include breakpoint(large) {
+    background-size: 100%;
+    height: 100vh;
+    min-height: 100vh;
   }
 }
 
@@ -89,8 +96,15 @@
 .hero {
   height: calc(100vh - 90px);
 
-  @include breakpoint(large) {
-    height: initial;
+  @include breakpoint(small) {
+    height: 410px;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+  }
+
+  @include breakpoint(medium) {
+    // height: 510px;
   }
 
   display: flex;
@@ -98,21 +112,15 @@
   align-items: center;
   justify-content: center;
 
-  @include breakpoint(large) {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-
   &__intro {
     order: 2;
     color: $white;
     display: flex;
     flex-direction: column;
 
-    @include breakpoint(large) {
+    @include breakpoint(small) {
       align-items: flex-start;
-      flex-basis: 100%;
-      flex-basis: 50%;
+      flex-basis: 55%;
       order: 1;
     }
 
@@ -120,9 +128,13 @@
       margin-bottom: 2rem;
       text-align: center;
 
-      @include breakpoint(large) {
+      @include breakpoint(small) {
         text-align: left;
       }
+    }
+
+    a {
+      margin-bottom: 2rem;
     }
   }
 
@@ -137,6 +149,18 @@
 
     img {
       width: 360px;
+
+      @include breakpoint(small) {
+        width: 350px;
+        // position: absolute;
+        // top: 50%;
+        // transform: translateY(-50%);
+        // right: -20%;
+      }
+
+      @include breakpoint(medium) {
+        width: 400px;
+      }
 
       @include breakpoint(large) {
         width: 550px;

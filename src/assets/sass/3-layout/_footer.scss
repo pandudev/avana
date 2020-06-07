@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
 
-    @include breakpoint(large) {
+    @include breakpoint(small) {
       align-items: flex-start;
     }
   }
@@ -40,7 +40,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
-    @include breakpoint(large) {
+    @include breakpoint(small) {
       flex-wrap: nowrap;
     }
   }
@@ -52,16 +52,16 @@
     justify-content: space-between;
     margin-bottom: 2rem;
 
-    @include breakpoint(large) {
+    @include breakpoint(small) {
       margin-bottom: 0;
-      flex-basis: 50%;
+      flex-basis: 45%;
       text-align: left;
     }
   }
 
   &__link {
     flex-basis: 50%;
-    @include breakpoint(large) {
+    @include breakpoint(small) {
       flex-basis: 20%;
     }
   }
@@ -72,8 +72,8 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @include breakpoint(large) {
-      flex-basis: 20%;
+    @include breakpoint(small) {
+      flex-basis: 25%;
     }
 
     &__list {

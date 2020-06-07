@@ -9,14 +9,22 @@ function reset() {
 
 function resize() {
   var width = $(window).width();
-  if (width < 768) {
-    $("#contact__span").text("di bawah");
-    $(".navbar__nav").hide();
-    $(".navbar__hamburger").show();
-  } else {
+  if (width > 1200) {
     $(".navbar__nav").show();
     $(".navbar__hamburger").hide();
     $("#contact__span").text("di samping");
+  } else if (width > 992) {
+    $(".navbar__nav").show();
+    $(".navbar__hamburger").hide();
+    $("#contact__span").text("di samping");
+  } else if (width > 768) {
+    $(".navbar__nav").hide();
+    $(".navbar__hamburger").show();
+    $("#contact__span").text("di samping");
+  } else {
+    $(".navbar__nav").hide();
+    $(".navbar__hamburger").show();
+    $("#contact__span").text("di bawah");
     reset();
   }
 }

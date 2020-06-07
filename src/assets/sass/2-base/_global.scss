@@ -3,6 +3,7 @@ body {
   font-family: $montserrat;
   color: $black;
   position: relative;
+  overflow-x: hidden;
 }
 
 .fixed {
@@ -17,7 +18,7 @@ body {
   width: 85%;
   margin: 0 auto;
 
-  @include breakpoint(large) {
+  @include breakpoint(medium) {
     width: 80%;
   }
 }
@@ -33,6 +34,9 @@ body {
     text-align: center;
     margin-bottom: 0.5rem;
 
+    @include breakpoint(small) {
+      width: 70%;
+    }
     @include breakpoint(large) {
       width: 60%;
     }
@@ -40,14 +44,15 @@ body {
 
   &__intro {
     width: 100%;
-    text-align: center;
     margin: 0 auto;
     margin-bottom: 2rem;
     text-align: justify;
+    display: flex;
+    justify-content: center;
 
-    @include breakpoint(large) {
+    @include breakpoint(small) {
       text-align: center;
-      width: 80%;
+      width: 85%;
     }
   }
 }
