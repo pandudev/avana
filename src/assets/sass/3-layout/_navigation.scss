@@ -65,6 +65,10 @@
           font-size: 24px;
           color: $white;
 
+          @include breakpoint(small) {
+            font-size: 30px;
+          }
+
           &.active {
             color: $blue;
           }
